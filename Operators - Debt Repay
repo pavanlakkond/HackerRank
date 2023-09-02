@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    float pt, rt, discount, tt, ft;
+    int years;
+    scanf("%f", &pt);
+    scanf("%f", &rt);
+    scanf("%d", &years);
+    float interest = (pt * rt * years) / 100.0;
+    tt = pt + interest;
+    discount = 0.02 * interest;
+    ft = tt - discount;
+    printf("%.2f\n", interest);
+    printf("%.2f\n", tt);
+    printf("%.2f\n", discount);
+    printf("%.2f\n", ft);
+
+    return 0;
+}
