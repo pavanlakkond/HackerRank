@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    char s[100];
+    int n;
+    float f;
+    char c;
+    scanf("%s%d%f %c",s,&n,&f,&c);
+    float r=floor(f*100)/100;
+    printf("Name: %s\n",s);
+    printf("Age: %d\n",n);
+    printf("CGPA: %.2f\n",r);
+    printf("Grade: %c",c);
+    return 0;
+}
