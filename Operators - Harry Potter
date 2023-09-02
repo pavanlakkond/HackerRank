@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int open_door(char code[]) {
+    char clean_code[5];
+    int first_digit, last_digit;
+
+    int j = 0;
+    for (int i = 0; code[i] != '\0'; i++) {
+        if (isdigit(code[i])) {
+            clean_code[j] = code[i];
+            j++;
+        }
+    }
+    clean_code[j] = '\0';
+
+    if (j != 4) {
+        return -1; 
+    }
+
+    first_digit = clean_code[0] - '0';
+    last_digit = clean_code[3] - '0';
+
+    int result = first_digit + last_digit;
+
+    return result;
+}
+
+int main() {
+    char input_code[10];
+    int result;
+
+    scanf("%s", input_code);
+
+    result = open_door(input_code);
+
+    if (result != -1) {
+        printf("%d", result);
+    } else {
+        printf("Invalid input. Please enter a four-digit code.\n");
+    }
+
+    return 0;
+}
